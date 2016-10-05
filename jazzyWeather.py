@@ -35,7 +35,14 @@ f = urllib2.urlopen('http://api.wunderground.com/api/' + apiKey + '/conditions/q
 json_string = f.read()
 parsed_json = json.loads(json_string)
 pop = parsed_json['forecast']['txt_forecast']['forecastday'][0]['pop'] # Get the chance of precipitation for the current day
+snow = parsed_json['forecast']['simpleforecast']['forecastday'][0]['conditions'] # Check to see if it's a snowy day
 f.close()
+
+# Check if any descriptions of snow are forecasted
+if snow in ["Snow"]:
+	snow = 1
+else:
+	snow = 0
 
 # Choose the weather directory according to the chance of rain (or snow, but that's a todo)
 if pop < 30:
