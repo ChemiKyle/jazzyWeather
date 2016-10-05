@@ -10,5 +10,5 @@ Play a different song according to the weather and (optionally) the season.
 Place desired music files in subdirectories for "clear/", "rain/", and "snow/" conditions (also needed in each season directory if using the seasons).
 
 TODO:
-  Write a bash script that runs the python script at the time for the alarm
+  Write a bash script that runs the python script at the time for the alarm  
   Conjure up some way to slowly raise the volume, like Android's smart alarm
