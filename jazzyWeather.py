@@ -15,14 +15,18 @@ if int(day) <= 9:
 dateNum = int(month + day)
 
 # Check date against concatenated dates of seasons, choose the season accordingly
-if dateNum >= 1221 or dateNum < 320:
-	season = "winter/"
-elif dateNum >= 922:
-	season = "autumn/"
-elif dateNum >= 621:
-	season = "summer/"
-elif dateNum >= 320:
-	season = "spring/"
+seasonsOn = 0
+if seasonsOn == True:
+	if dateNum >= 1221 or dateNum < 320:
+		season = "winter/"
+	elif dateNum >= 922:
+		season = "autumn/"
+	elif dateNum >= 621:
+		season = "summer/"
+	elif dateNum >= 320:
+		season = "spring/"
+else:
+	season = ""
 
 # Stuff for interacting with the wunderground API, can obviously be adapted to any service
 apiKey = "" # You can't have mine, but you can get your own for free here: https://www.wunderground.com/?apiref=50c69f4667601846
