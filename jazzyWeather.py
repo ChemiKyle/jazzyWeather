@@ -52,5 +52,5 @@ song.play()
 # Do some kung-fu to make it actually play the whole song
 time.sleep(1)
 songLength = song.get_length()
-timeRemaining = ((songLength/1000) - 1)*60
+timeRemaining = ((songLength/1000) - 1)
 time.sleep(timeRemaining)
