@@ -1,4 +1,4 @@
-import os, random, datetime, urllib2, json, vlc
+import os, random, datetime, urllib2, json, vlc, time
 
 musicDir = "/path/to/files"
 
@@ -47,4 +47,10 @@ elif snow == True:
 
 #Pick a random song from the directory
 song = random.choice(os.listdir(musicDir + season + forecast))
-vlc.song
+song = vlc.MediaPlayer(musicDir + season + forecast + song)
+song.play()
+# Do some kung-fu to make it actually play the whole song
+time.sleep(1)
+songLength = song.get_length()
+timeRemaining = ((songLength/1000) - 1)*60
+time.sleep(timeRemaining)
