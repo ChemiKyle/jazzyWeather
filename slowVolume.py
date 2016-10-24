@@ -7,5 +7,5 @@ m.setvolume(n)
 
 while n < 100:
 	m.setvolume(n)
-	n += 2.5 # Increment the volume higher
+	n += 2 # Increment the volume higher
 	time.sleep(2)
