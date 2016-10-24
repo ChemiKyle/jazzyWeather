@@ -7,8 +7,9 @@ Salivation not included.
 
 ## I don't care about your life story, what's it do? 
 Play a different song according to the weather and (optionally) the season.  
-Place desired music files in subdirectories for "clear/", "rain/", and "snow/" conditions (also needed in each season directory if using the seasons).
+Place desired music files in subdirectories for "clear/", "rain/", and "snow/" conditions (also needed in each season directory if using the seasons).  
+
+Utilize the slowVolume.py script for a more gentle wake up a la Android smart alarm (requires alsaaudio module for python).
 
 TODO:  
-  Find some way to query the alarm time for my phone and use that instead of a cron job  
-  Conjure up some way to slowly raise the volume, like Android's smart alarm
+  Find some way to query the alarm time for my phone and use that instead of a cron job
