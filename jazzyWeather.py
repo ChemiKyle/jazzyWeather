@@ -1,6 +1,6 @@
 import os, random, datetime, urllib2, json, vlc, time
 
-musicDir = "/path/to/files"
+musicDir = "/home/pi/Music/jazzyWeather/"
 
 date = datetime.datetime.now()
 
@@ -29,11 +29,17 @@ else:
 	season = ""
 
 # Stuff for interacting with the wunderground API, can obviously be adapted to any service
-apiKey = "" # You can't have mine, but you can get your own for free here: https://www.wunderground.com/?apiref=50c69f4667601846
-yourLocalStation = "" # Go to the wunderground site and choose your nearest station
-f = urllib2.urlopen('http://api.wunderground.com/api/' + apiKey + '/conditions/q/pws:' + yourLocalStation + '.json')
+with open('config.txt', 'r') as config:
+	config.readline()
+	api_key = config.readline().replace('\n','')
+	config.readline()
+	your_local_station = config.readline().replace('\n','')
+
+f = urllib2.urlopen('http://api.wunderground.com/api/' + api_key + '/conditions/q/pws:' + your_local_station + '.json')
 json_string = f.read()
 parsed_json = json.loads(json_string)
+
+# Stuff for the actual weather data
 pop = parsed_json['forecast']['txt_forecast']['forecastday'][0]['pop'] # Get the chance of precipitation for the current day
 snow = parsed_json['forecast']['simpleforecast']['forecastday'][0]['conditions'] # Check to see if it's a snowy day
 f.close()
