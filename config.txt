@@ -1,0 +1,4 @@
+Copy your api key on the blank line below
+
+Copy your personal weather station code on the blank line below
+
