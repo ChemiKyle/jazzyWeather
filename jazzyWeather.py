@@ -35,7 +35,11 @@ with open('config.txt', 'r') as config:
 	config.readline()
 	your_local_station = config.readline().replace('\n','')
 
-f = urllib2.urlopen('http://api.wunderground.com/api/' + api_key + '/conditions/q/pws:' + your_local_station + '.json')
+strng = ('http://api.wunderground.com/api/' + api_key + '/forecast/q/pws:' + your_local_station + '.json')
+print(strng)
+
+
+f = urllib2.urlopen('http://api.wunderground.com/api/' + api_key + '/forecast/q/pws:' + your_local_station + '.json')
 json_string = f.read()
 parsed_json = json.loads(json_string)
 
