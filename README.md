@@ -7,7 +7,9 @@ Salivation not included.
 
 ## I don't care about your life story, what's it do? 
 Play a different song according to the weather and (optionally) the season.  
-Place desired music files in subdirectories for "clear/", "rain/", and "snow/" conditions (also needed in each season directory if using the seasons).  
+Place desired music files in subdirectories for `clear/`, `rain/`, and `snow/` conditions (also needed in each season directory if using the seasons).  
+
+Requires the vlc module and must be run with python2. `sudo pip install python-vlc`
 
 Utilize the slowVolume.py script for a more gentle wake up a la Android smart alarm (requires alsaaudio module for python).
 
