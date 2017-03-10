@@ -16,7 +16,7 @@ dateNum = int(month + day)
 
 # Check date against concatenated dates of seasons, choose the season accordingly
 seasonsOn = 0
-if seasonsOn == True:
+if seasonsOn:
 	if dateNum >= 1221 or dateNum < 320:
 		season = "winter/"
 	elif dateNum >= 922:
@@ -46,16 +46,16 @@ f.close()
 
 # Check if any descriptions of snow are forecasted
 if snow in ["Snow"]:
-	snow = 1
+	snow = True
 else:
-	snow = 0
+	snow = False
 
-# Choose the weather directory according to the chance of rain (or snow, but that's a todo)
+# Choose the weather directory according to the chance of rain (or snow)
 if pop < 30:
     forecast = "clear/"
 elif pop >= 30 and snow != True:
     forecast = "rain/"
-elif snow == True:
+elif snow:
  	forecast = "snow/"
 
 #Pick a random song from the directory
